@@ -1,0 +1,11 @@
+
+<% @users.each do |u|%>
+  <%= form_with(url: user_registration_path, local: true) do |form| %>
+    <%= u.email %>
+    <%= form.hidden_field :id, :value => u.id %>
+    <%= form.select :role, options_for_select([["Select One"], "admin", "visitor"]), :class => 'genForm_dropBox' %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% end %>
