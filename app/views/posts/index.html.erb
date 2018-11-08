@@ -30,3 +30,9 @@
 <br>
 
 <%= link_to 'Nuevo Post', new_post_path, class: 'btn btn-primary' %>
+
+<% if user_signed_in? and @user.admin? %>
+
+<%= link_to 'Dashboard', pages_dashboard_path, class: 'btn btn-primary' %>
+
+<% end %>
